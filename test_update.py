@@ -6,7 +6,8 @@ import sys
 import signal
 
 def update():
-    print("Update function called")
+    print("Update function called", flush=True)  # <-- สำคัญมาก
+    sys.stdout.flush()  # เพิ่มอีกเผื่อไว้
     os.kill(os.getpid(), signal.SIGTERM)
     QCoreApplication.quit()
 
